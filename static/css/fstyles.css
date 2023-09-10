@@ -1,0 +1,23 @@
+/* styles.css */
+
+.production-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust minmax and other values as needed */
+    gap: 20px;
+}
+
+.production-item {
+    text-align: center;
+}
+
+.production-item img {
+    width: 50%;
+    height: 50%;
+    max-width: 50%;
+    border: 1px solid #ccc;
+}
+
+.crop-name {
+    margin-top: 5px;
+    font-weight: bold;
+}

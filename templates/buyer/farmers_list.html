@@ -1,0 +1,15 @@
+{% extends 'buyer/bbase.html' %}
+
+
+{% block title %}Farmers List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Farmers List</h1>
+    <ul>
+        {% for farmer in farmers %}
+            <li><a href="{% url 'farmer_profile' farmer.username %}">{{ farmer.first_name }} - {{ farmer.username }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

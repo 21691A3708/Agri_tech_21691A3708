@@ -1,0 +1,33 @@
+{% extends 'farmer/fbase.html' %}
+
+
+{% block title %}My Productions{% endblock %}
+
+{% block content %}
+<div>
+<a href="{% url 'add_production' %}" class="btn btn-primary">add_production</a>
+</div>
+
+<div class="container">
+    <h1>My Productions</h1>
+    <div class="production-grid">
+        {% for production in productions %}
+        <div class="production-item">
+            <a href="{% url 'production_detail' production.pk %}">
+                <img src="{{ production.image.url }}" alt="{{ production.crop_name }}" class="img-thumbnail">
+                <br>
+                <div class="crop-name">{{ production.crop_name }}</div>
+            </a>
+            <br>
+            <br>
+            <div class="actions">
+                <a href="{% url 'edit_production' production.pk %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'delete_production' production.pk %}" class="btn btn-danger">Delete</a>
+            </div>
+            <br>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

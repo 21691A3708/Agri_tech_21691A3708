@@ -1,0 +1,15 @@
+{% extends 'buyer/bbase.html' %}
+{% block title %}Production Detail{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ production.crop_name }} Details</h1>
+    <img src="{{ production.image.url }}" alt="{{ production.crop_name }}" class="img-thumbnail">
+    <p><strong>Crop Name:</strong> {{ production.crop_name }}</p>
+    <p><strong>Seed Type:</strong> {{ production.seed_type }}</p>
+    <p><strong>Starting Date:</strong> {{ production.starting_date }}</p>
+    <p><strong>Crop Status:</strong> {{ production.crop_status }}</p>
+    <p><strong>Bio of Crop:</strong> {{ production.bio_of_crop }}</p>
+    <p><strong>Harvesting Date:</strong> {{ production.harvesting_date }}</p>
+</div>
+{% endblock %}

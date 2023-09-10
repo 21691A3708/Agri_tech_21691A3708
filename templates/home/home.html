@@ -1,0 +1,83 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #339966;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h1 {
+        color: #339966;
+    }
+    p {
+        line-height: 1.6;
+    }
+    .feature {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .feature-icon {
+        flex: 0 0 20%;
+        padding: 10px;
+        background-color: #339966;
+        color: #ffffff;
+        text-align: center;
+    }
+    .feature-content {
+        flex: 0 0 80%;
+        padding-left: 20px;
+    }
+</style>
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <h2>Our Mission</h2>
+                <p>At Agri_Tech, we are committed to transforming agriculture by harnessing the power of technology to improve crop yield, sustainability, and efficiency in farming practices.</p>
+        
+                <h2>Key Features</h2>
+                <div class="feature">
+                <div class="feature-icon">
+                    <img src="{% static 'image/precision.png' %}"  style="width: 400px;" alt="Smart Irrigation">
+                </div>
+                <div class="feature-content">
+                    <h3>Precision Farming</h3>
+                    <p>Utilize data-driven insights to optimize planting, irrigation, and pest control, resulting in higher yields and reduced resource usage.</p>
+                </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <img src="{% static 'image/smart-irrigation-icon.png' %}"  style="width: 400px;" alt="Smart Irrigation">
+                    </div>
+                    <div class="feature-content">
+                        <h3>Smart Irrigation</h3>
+                        <p>Implement advanced sensor-based irrigation systems to ensure optimal water distribution and conserve water resources.</p>
+                    </div>
+                </div>
+        <!-- Add more features here -->
+
+                <h2>Contact Us</h2>
+                <p>If you're ready to embrace the future of agriculture, contact us at <a href="agritech21691a3708@gmail.com">agritech21691a3708@gmail.com</a> to learn more about our innovative solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+{% endblock %}
+

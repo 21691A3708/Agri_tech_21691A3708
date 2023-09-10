@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/chat.js' %}"></script>
+    <title>chat room</title>
+</head>
+<body>
+    <div class="chat-room">
+        <h1>Chat Room with {{ chat.other_user.username }}</h1>
+        <div id="chat-messages">
+            {% for message in messages %}
+            <div class="message {% if message.sender == request.user %}self{% else %}other{% endif %}">
+            <p>{{ message.sender.username }}:</p>
+            <p>{{ message.content }}</p>
+            <p class="timestamp">{{ message.timestamp }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <form id="chat-form" method="post" action="{% url 'chat_room' chat.id %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+    <br>
+    <a href="{% url 'signin' %}" class="btn btn-primary">home</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'buyer/bbase.html' %}
+
+{% block title %}Productions List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Productions List for {{ farmer.first_name }}</h1>
+    <div class="production-grid">
+        {% for production in productions %}
+        <div class="production-item">
+            <a href="{% url 'bproduction_detail' production.pk %}">
+                <img src="{{ production.image.url }}" alt="{{ production.crop_name }}" class="img-thumbnail">
+                <div class="crop-name">{{ production.crop_name }}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,24 @@
+{% extends 'buyer/bbase.html' %}
+
+{% block title %}Farmer Profile and Production{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ farmer.username }} - Profile and Production</h1>
+    <h2>Farmer Profile</h2>
+    <p>First Name: {{ farmer.first_name }}</p>
+    <p>Last Name: {{ farmer.last_name }}</p>
+    <p>Age: {{ farmer.age }}</p>
+    <p>City/Village: {{ farmer.city_village }}</p>
+    <p>State: {{ farmer.state }}</p>
+    <p>Country: {{ farmer.country }}</p>
+    <!-- Add more fields as needed -->
+
+    <h2> {{ farmer.first_name }} Farmer Productions</h2>
+    <ul>
+        {% for production in productions %}
+            <li><a href="{% url 'production_detail' production.pk %}">{{ production.crop_name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'farmer/fbase.html' %}
+
+{% block title %}Buyers List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Buyers List</h1>
+    <ul>
+        {% for buyer in buyers %}
+            <li><a href="{% url 'buyer_profile' buyer.username %}">{{ buyer.first_name }} - {{ buyer.username }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'farmer/fbase.html' %}
+
+{% block title %}Delete Production{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Delete Production</h1>
+    <p>Are you sure you want to delete the production "{{ production.crop_name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'farmer_productions' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

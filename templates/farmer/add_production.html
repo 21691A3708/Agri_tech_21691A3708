@@ -1,0 +1,14 @@
+{% extends 'farmer/fbase.html' %}
+
+{% block title %}Add Production{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Production</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Add Production</button>
+    </form>
+</div>
+{% endblock %}
